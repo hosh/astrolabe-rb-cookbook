@@ -1,6 +1,5 @@
 #
 # Cookbook Name:: astrolabe-rb
-# Recipe:: default
 #
 # Copyright (C) 2013 Ho-Sheng Hsiao
 #
@@ -22,5 +21,8 @@
 # CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 # OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-include_recipe 'dev-stack-rails::ruby'
-include_recipe 'astrolabe-rb::libnova'
+default['libnova']['source']['url'] = 'http://downloads.sourceforge.net/project/libnova/libnova/v%200.15.0/libnova-0.15.0.tar.gz'
+default['libnova']['source']['version'] = '0.15.0'
+default['libnova']['source']['md5'] = '756fdb55745cb78511f83a62c25f3be4'
+default['libnova']['source']['build_dir'] = '/var/opt/build'
+default['libnova']['source']['cache_dir'] = Chef::Config['file_cache_path'] || '/tmp'
